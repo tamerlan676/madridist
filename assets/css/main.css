@@ -1,0 +1,10 @@
+:root{
+    --blue: #112038;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
