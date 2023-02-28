@@ -2,8 +2,14 @@
 .collections
     h3.block-title Коллекции
     .collections-wrapper
-        nuxt-link.collection(to=`#` v-for="item in 4")
-            h4.collection-name Классика
+        nuxt-link.collection(to="/collections/retro")
+            h4.collection-name Retro
+        nuxt-link.collection(to="/collections/retro")
+            h4.collection-name Jerseys
+        nuxt-link.collection(to="/collections/retro")
+            h4.collection-name Minimalism
+        nuxt-link.collection(to="/collections/retro")
+            h4.collection-name Present
 </template>
     
     <script>
@@ -11,6 +17,10 @@
         name: 'CollectionsComponent',
         data() {
           return {
+            retro: require('~/assets/images/retro.jpg'),
+            forms: require('~/assets/images/forms.jpg'),
+            minimalism: require('~/assets/images/minimalism.jpg'),
+            present: require('~/assets/images/present.jpg'),
           }
         }
       }
@@ -20,7 +30,7 @@
     .collections{
       padding: 40px 16px;
       @media(min-width: 1200px){
-        padding: 120px 0 60px;
+        padding: 120px 0;
       }
       .block-title{
         margin-bottom: 32px;
@@ -41,8 +51,7 @@
           margin: 0 auto; 
         }
         @media(min-width: 1200px){
-          width: 100%;
-          padding: 0 40px;
+          width: 1200px;
           margin: 0 auto; 
           grid-template-columns: 1fr 1fr 1fr 1fr;
           box-sizing: border-box;
@@ -60,9 +69,34 @@
             box-sizing: border-box;
             text-align: center;
             transition: all .5s ease;
-            background: url(../assets/images/collection.webp);
             background-size: cover;
             text-decoration: none;
+            &:nth-child(1){
+              background-image: url(../assets/images/retro-sm.jpg);
+            }
+            &:nth-child(2){
+              background-image: url(../assets/images/forms-sm.jpg);
+            }
+            &:nth-child(3){
+              background-image: url(../assets/images/minimalism-sm.jpg);
+            }
+            &:nth-child(4){
+              background-image: url(../assets/images/present-sm.jpg);
+            }
+            @media(min-width: 768px){
+              &:nth-child(1){
+                background-image: url(../assets/images/retro.jpg);
+              }
+              &:nth-child(2){
+              background-image: url(../assets/images/forms.jpg);
+              }
+              &:nth-child(3){
+              background-image: url(../assets/images/minimalism.jpg);
+              }
+              &:nth-child(4){
+              background-image: url(../assets/images/present.jpg);
+              }
+            }
             @media(min-width: 992px){
             height: 400px; 
             background-position:  center;
@@ -82,9 +116,9 @@
             transition: all .5s ease;
             }
             &:hover{
-            &:before{
-                opacity: 0.3;
-            }
+              &:before{
+                  opacity: 0.3;
+              }
             }
         .collection-name{
           color: #fff;

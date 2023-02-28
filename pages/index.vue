@@ -1,11 +1,11 @@
 <template lang="pug">
 .main 
-  Banner
+  Hero
   Collections
+  Hits
+  PayDelivery
 </template>
 
-<script>
-export default {
-}
-</script>
+
+
 

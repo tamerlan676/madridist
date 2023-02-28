@@ -1,48 +1,78 @@
 <template lang="pug">
 .banner
-    .text 
-        h1 MADRIDIST
-        p Уникальные сувениры для реальных&nbsp;фанатов
+    .banner-wrapper
+        .left
+            h3 Есть вопросы?
+            p Свяжитесь с нами и мы поможем вам, как Лука Модрич и Тони Кросс помогают своими партнерам по команде
+            button связаться 
+        .right
+            img(src="~/assets/images/lukakross.jpg")
 </template>
 
 <script>
-export default{
+export default {
     name: 'BannerComp'
 }
 </script>
 
 <style lang="scss" scoped>
 .banner{
-    width: 100%;
-    height: 450px;
-    background-image: url(../assets/images/banner.jpg);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    @media(min-width: 992px){
-        height: 600px;
-    }
-    .text{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        padding: 40px;
-        background: rgb(17,32,56);
-        background: linear-gradient(0deg, rgba(17,32,56,0.7511598389355743) 80%, rgba(17,32,56,0.8996192226890756) 100%);
-        color: #fff;
-        text-align: center;
-        box-sizing: border-box;
-        h1{
-            letter-spacing: 10px;
-            margin-bottom: 10px;
+    padding: 16px;
+    margin-bottom: 60px;
+    .banner-wrapper{
+        background: var(--blue);
+        @media(min-width: 992px){
+            display: flex;
+            width: 900px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        @media(min-width: 1200px){
+            width: 1200px;
+        }
+        .left{
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             @media(min-width: 992px){
-                font-size: 40px;
+                width: 500px;
+                padding: 32px;
+            }
+            @media(min-width: 1200px){
+                width: 600px;
+                padding: 32px;
+            }
+            h3{
+                color: #fff;
+                margin-bottom: 24px;
+                @media(min-width: 992px){
+                    font-size: 32px;
+                }
+            }
+            p{
+                margin-bottom: 24px;
+            }
+            button{
+                background: #fff;
+                color: var(--blue);
+                padding: 15px 20px;
+                text-transform: uppercase;
+                width: 100%;
+                font-weight: 500;
+                @media(min-width: 992px){
+                    width: 200px;
+                }
             }
         }
-        p{
-            line-height: 24px;
+        .right{
+            display: none;
             @media(min-width: 992px){
-                font-size: 18px;
+                display: block;
+            }
+            img{
+                max-width: 100%;
             }
         }
     }

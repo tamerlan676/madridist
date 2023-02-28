@@ -9,53 +9,55 @@
             li
                 nuxt-link(to="/") Главная
             li
-                nuxt-link(to="/about") О нашей компании
+                nuxt-link(to="/about") О компании
             li
-                nuxt-link(to="/about") Доставка
+                nuxt-link(to="/delivery") Доставка
             li
-                nuxt-link(to="/about") Контакты
+                nuxt-link(to="/bonuses") Акции и бонусы
+            li
+                nuxt-link(to="/contacts") Контакты
         .mob-sm
     .cart(@click='$emit("turnCart")')
-        img(width="30px" src="~/assets/images/cart.svg")
-        //- .count(v-if="cart.length > 0") {{ cart.length }}
+      img(width="30px" src="~/assets/images/cart.svg")
+      .count(v-if="cart.length > 0") {{ cart.length }}
 </template>
 <script>
     export default{
     name: 'HeaderComponent',
-    // props: {
-    //     activeBurger: {
-    //     type: Boolean,
-    //     default: false
-    //     },
-    // },
-    // data() {
-    // return{
-    //     catDroodown: false,
-    //     collectionsDropdown: false
-    // }
-    // },
-    // computed: {
-    // cart() {
-    //     return this.$store.state.cart
-    //     },
-    // cartLength() {
-    //     return this.$store.state.cartLength
-    //     }
-    // },
-    // methods: {
-    //     turnCatMenu () {
-    //     this.catDroodown = !this.catDroodown
-    //     if(this.collectionsDropdown){
-    //         this.collectionsDropdown = false
-    //     }
-    //     },
-    //     turnColMenu () {
-    //     this.collectionsDropdown = !this.collectionsDropdown
-    //     if(this.catDroodown){
-    //         this.catDroodown = false
-    //     }
-    //     }
-    // }
+    props: {
+        activeBurger: {
+        type: Boolean,
+        default: false
+        },
+    },
+    data() {
+    return{
+        catDroodown: false,
+        collectionsDropdown: false
+    }
+    },
+    computed: {
+    cart() {
+        return this.$store.state.cart
+        },
+    cartLength() {
+        return this.$store.state.cartLength
+        }
+    },
+    methods: {
+        turnCatMenu () {
+        this.catDroodown = !this.catDroodown
+        if(this.collectionsDropdown){
+            this.collectionsDropdown = false
+        }
+        },
+        turnColMenu () {
+        this.collectionsDropdown = !this.collectionsDropdown
+        if(this.catDroodown){
+            this.catDroodown = false
+        }
+        }
+    }
     }
 </script>
     
@@ -198,11 +200,7 @@
           transform: matrix(1, 0, 0, 1, 0, 10);
         }
       }
-      .mob-sm{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .cart{
+      .cart{
           position: relative;
           cursor: pointer;
           .count{
@@ -217,10 +215,15 @@
             padding: 5px;
             font-size: 12px;
             font-weight: 500;
+            padding: 10px;
             top: 0;
             right: -10px;
           }
         }
+      .mob-sm{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
     }
     </style>
