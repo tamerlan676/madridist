@@ -14,9 +14,9 @@
                 select(v-model="model")
                     option(disabled value="") Выберите один из вариантов
                     option(v-for="(item, key) in getModels" :key="key") {{ item }}
-                a.not-model(href="https://wa.me/79288597799" target="_blank") Моей модели нет в списке
+                a.not-model(href="https://wa.me/792188208097" target="_blank") Моей модели нет в списке
           .option
-        button.add-to-cart(@click="addToCart(product)" :class="{ active: model !== '' }") Добавить в корзину
+          button.add-to-cart(@click="addToCart(product)" :class="{ active: model !== '' }") Добавить в корзину
 
 </template>
 
@@ -70,22 +70,51 @@ export default {
     padding: 16px;
     .mobile-image{
         width: 100%;
-        margin-bottom: 24px;
+        margin: 0 auto 24px;
+        @media(min-width: 768px){
+          width: 300px;
+        }
+        @media(min-width: 992px){
+          display: none;
+        }
         img{
             max-width: 100%;
         }
     }
     .product-wrapper{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media(min-width: 1200px){
+        width: 1200px;
+        margin: 0 auto;
+      }
         .image{
             display: none;
-        }
+            @media(min-width: 992px){
+              display: block;
+              width: 400px;
+            }
+            img{
+              max-width: 100%;
+            }
+          }
         .info{
+          @media(min-width: 992px){
+              width: 500px;
+            }
+            @media(min-width: 1200px){
+              width: 700px;
+            }
             h1{
                 font-size: 24px;
                 margin-bottom: 16px;
             }
             .desc{
                 margin-bottom: 24px;
+                @media(min-width: 1200px){
+                  width: 500px;
+                }
             }
             .option{
                 margin-bottom: 16px;
@@ -101,13 +130,15 @@ export default {
                     border: 2px solid #000;
                     color: #000;
                     background: transparent;
+                    cursor: pointer;
                     @media(min-width: 768px){
                     width: 300px;
                     }
                 }
             }
             .not-model{
-                color: rgb(67, 158, 81)
+                color: rgb(67, 158, 81);
+                display: block;
             }
         }
         .add-to-cart{
@@ -121,7 +152,7 @@ export default {
             margin-bottom: 24px;
             pointer-events: none;
             border-radius: 8px;
-            @media(min-width: 768px){
+            @media(min-width: 992px){
                 width: 300px;
             }
             &.active{

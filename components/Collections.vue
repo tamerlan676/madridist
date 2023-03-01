@@ -102,7 +102,7 @@
             background-position:  center;
             }
             @media(min-width: 1200px){
-            height: 500px; 
+            height: 300px; 
             }
             &:before{
             content: '';

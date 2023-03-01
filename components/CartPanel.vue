@@ -12,7 +12,6 @@
                   .info
                     .title {{ product.title }}
                     .model(v-if="product.model || product.color") {{ product.model }}, {{ product.color }}
-                    .model(v-if="product.shirtName || product.shirtNumber") {{ product.shirtName }}, {{ product.shirtNumber }}
                     .calc-price {{ product.price }} ₽
         .total-price
             .total Итоговая цена: 
@@ -24,7 +23,7 @@
         .errorMessage(v-if="promocodeError") Недействительный промокод
         .btn(@click="$emit('turnCart')")
             nuxt-link.create-order(to="/order") Оформить заказ
-        .empty-cart(v-if="cart.length < 1") В вашей корзине пока ничего нет
+    .empty-cart(v-if="cart.length < 1") В вашей корзине пока ничего нет
 </template>
     
 <script>
@@ -82,6 +81,7 @@
           @media(min-width: 768px){
             padding: 20px 16px;
             width: 400px;
+            top: 105px
           }
           &.active{
             right: 0;
