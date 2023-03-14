@@ -14,7 +14,7 @@
                 select(v-model="model")
                     option(disabled value="") Выберите один из вариантов
                     option(v-for="(item, key) in getModels" :key="key") {{ item }}
-                a.not-model(href="https://wa.me/792188208097" target="_blank") Моей модели нет в списке
+                a.not-model(href="https://wa.me/79188208097" target="_blank") Моей модели нет в списке
           .option
           button.add-to-cart(@click="addToCart(product)" :class="{ active: model !== '' }") Добавить в корзину
 
@@ -100,6 +100,7 @@ export default {
             }
           }
         .info{
+          width: 100%;
           @media(min-width: 992px){
               width: 500px;
             }
@@ -152,7 +153,7 @@ export default {
             margin-bottom: 24px;
             pointer-events: none;
             border-radius: 8px;
-            @media(min-width: 992px){
+            @media(min-width: 768px){
                 width: 300px;
             }
             &.active{

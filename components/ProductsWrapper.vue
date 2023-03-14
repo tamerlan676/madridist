@@ -1,45 +1,49 @@
 <template lang="pug">
-.hits 
-    h2 Чехлы-Конструкторы
-    .hits-wrapper
-        nuxt-link.hit(v-for="item in constructors" :key="item" :to="item.link") 
-            .hit-img
-                img(:src="item.image") 
-            .hit-info 
-                h3 {{ item.title }}
-                .old-price 1800 ₽
-                .price 1100 ₽
-    
+.collections-list
+    h1 Наша коллекция
+    .collection-desc Память как и легенды - бессмертна!
+    .collection-wrapper 
+        nuxt-link.product(v-for="(item, id) in collection" :key="id" :to="`/collections/retro/${item.id}`") 
+            .product-img
+                img(:src="item.acf.image") 
+            .product-info 
+                h3 {{ item.title.rendered }}
+                .old-price {{ item.acf.old_price }} ₽
+                .price {{ item.acf.price }} ₽
 </template>
 
 <script>
 export default {
-    name: 'HitsComponent',
-    data () {
-        return {
-            constructors: [
-                {
-                    title: 'Season 19-20',
-                    image: require('~/assets/images/constructors/americano.jpg'),
-                    link: '/constructors/19-20'
-                }
-            ]
-        }
+    name: 'ProductsWrapper',
+    props: {
+      collection: Array,
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.hits{
+.collections-list{
     padding: 40px 16px;
-    @media(min-width: 992px){
-        padding: 120px 0;
+    @media(min-width: 1200px){
+            margin: 0 auto;
+            width: 1200px;
+            padding: 120px 0;
     }
-    h2{
+    h1{
+        margin-bottom: 16px;
         text-align: center;
-        margin-bottom: 32px;
+        font-size: 24px;
+        @media(min-width: 992px){
+            font-size: 32px;
+        }
     }
-    .hits-wrapper{
+    .collection-desc{
+        margin-bottom: 40px;
+        font-style: italic;
+        text-align: center;
+
+    }
+    .collection-wrapper{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10px;
@@ -51,7 +55,7 @@ export default {
             margin: 0 auto;
             width: 1200px;
         }
-        .hit{
+        .product{
             border: 1px solid #f2f2f2;
             padding: 15px;
             text-decoration: none;
@@ -84,7 +88,6 @@ export default {
             }
         }
     }
-
 }
 
 </style>

@@ -2,6 +2,12 @@
     --blue: #112038;
 }
 
+@font-face {
+    font-family: "19-20";
+    src: local("19-20"),
+     url(~/assets/fonts/19-20.ttf) format("truetype");
+  }
+
 body{
     color: var(--blue)
 }

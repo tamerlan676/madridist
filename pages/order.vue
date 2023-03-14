@@ -247,7 +247,7 @@
           this.$store.commit('setDeliveryStreet', datas)
         },
         submitForm() {
-          const list = this.cart.map((item, index) =>  (index + 1) + ' ' + item.title + ' ' + item.model + ' ' + item.price + '₽' )
+          const list = this.cart.map((item, index) =>  (index + 1) + ' ' + item.title + ' ' + item.model + ' ' + item.shirtName + ' ' + item.shirtNumber + ' - ' + item.price + '₽' )
           const order = {
             name: this.name,
             familia: this.familia,
