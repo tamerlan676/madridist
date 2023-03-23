@@ -3,7 +3,7 @@
     h1 Retro
     .collection-desc Память как и легенды - бессмертна!
     .collection-wrapper 
-        nuxt-link.product(v-for="item in collection" :to="`/collections/retro/${item.id}`") 
+        nuxt-link.product(v-for="(item, key) in collection" :key="key" :to="`/collections/retro/${item.id}`") 
             .product-img
                 img(:src="item.acf.image") 
             .product-info 
@@ -24,7 +24,11 @@
     },
     head(){
         return {
-          title: 'Коллекция Alania от My Ossetia',
+          title: 'Чехлы для фанатов Реал Мадрид',
+          meta: [
+              { hid: 'description', name: 'description', content: 'Выбирай уникальный дизайнерский чехол на свой телефон' },
+          ]
+
         }
     },
     computed: {

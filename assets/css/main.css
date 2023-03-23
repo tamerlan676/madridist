@@ -8,6 +8,24 @@
      url(~/assets/fonts/19-20.ttf) format("truetype");
   }
 
+  @font-face {
+    font-family: "20-21";
+    src: local("20-21"),
+     url(~/assets/fonts/20-21.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "22";
+    src: local("22"),
+     url(~/assets/fonts/22.ttf) format("truetype");
+  }
+
+  @font-face {
+    font-family: "22-23";
+    src: local("22-23"),
+     url(~/assets/fonts/22-23.ttf) format("truetype");
+  }
+
 body{
     color: var(--blue)
 }

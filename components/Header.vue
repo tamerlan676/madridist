@@ -11,9 +11,7 @@
             li
                 nuxt-link(to="/about") О компании
             li
-                nuxt-link(to="/delivery") Доставка
-            li
-                nuxt-link(to="/bonuses") Акции и бонусы
+                nuxt-link(to="/delivery") Доставка и оплата
             li
                 nuxt-link(to="/contacts") Контакты
         .mob-sm

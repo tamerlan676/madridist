@@ -107,6 +107,7 @@
                       span Способ доставки: 
                       span {{ delVariant }}
                   button.submit-btn(type="submitForm") Отправить
+                  .privacy(v-html="policy") {{ policy }} 
             .order-info 
                 h3 Ваш заказ
                 .products
@@ -140,6 +141,7 @@
           query: '',
           token: 'd7ddbc18cd786871c68484922bd302052d4dfd5b',
           currentStep: 1,
+          policy: `Нажимая на кнопку вы соглашаетесь с <a href="/policy.pdf">Политикой конфиденциальности</a>`,
           name: '',
           familia: '',
           city: '',
@@ -476,7 +478,15 @@
           width: 100%;
           color: #fff;
           border-radius: 5px;
+          margin-bottom: 10px;
         }
+        .privacy{
+          font-size: 12px;
+          text-align: center;
+          a{
+            color:green
+          }
+        }  
       }
       /* Анимации появления и исчезновения могут иметь */
     /* различные продолжительности и динамику.       */

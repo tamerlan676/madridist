@@ -1,8 +1,9 @@
 <template lang="pug">
 .hits 
-    h2 Чехлы-Конструкторы
+    h2 Чехлы - Конструкторы
+    .collection-desc Добавь любое имя и номер на свой чехол
     .hits-wrapper
-        nuxt-link.hit(v-for="item in constructors" :key="item" :to="item.link") 
+        nuxt-link.hit(v-for="(item, key) in constructors" :key="key" :to="item.link") 
             .hit-img
                 img(:src="item.image") 
             .hit-info 
@@ -22,6 +23,21 @@ export default {
                     title: 'Season 19-20',
                     image: require('~/assets/images/constructors/americano.jpg'),
                     link: '/constructors/19-20'
+                },
+                {
+                    title: 'Season 19-20',
+                    image: require('~/assets/images/constructors/2020-21.jpg'),
+                    link: '/constructors/20-21'
+                },
+                {
+                    title: 'Season 22',
+                    image: require('~/assets/images/constructors/22-season.jpg'),
+                    link: '/constructors/22-season'
+                },
+                {
+                    title: 'Season 22-23',
+                    image: require('~/assets/images/constructors/22-23.jpg'),
+                    link: '/constructors/22-23'
                 }
             ]
         }
@@ -36,8 +52,18 @@ export default {
         padding: 120px 0;
     }
     h2{
+        margin-bottom: 16px;
         text-align: center;
-        margin-bottom: 32px;
+        font-size: 24px;
+        @media(min-width: 992px){
+            font-size: 32px;
+        }
+    }
+    .collection-desc{
+        margin-bottom: 40px;
+        font-style: italic;
+        text-align: center;
+
     }
     .hits-wrapper{
         display: grid;

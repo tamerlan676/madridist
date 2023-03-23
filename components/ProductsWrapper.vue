@@ -1,6 +1,6 @@
 <template lang="pug">
 .collections-list
-    h1 Наша коллекция
+    h2 Наша коллекция
     .collection-desc Память как и легенды - бессмертна!
     .collection-wrapper 
         nuxt-link.product(v-for="(item, id) in collection" :key="id" :to="`/collections/retro/${item.id}`") 
@@ -29,7 +29,7 @@ export default {
             width: 1200px;
             padding: 120px 0;
     }
-    h1{
+    h2{
         margin-bottom: 16px;
         text-align: center;
         font-size: 24px;

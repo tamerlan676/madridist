@@ -8,7 +8,6 @@
                     .icon(v-if="item.subitems" :class="{ turned: item.sub }")
     CartPanel(:class="{active: cartActive}" @turnCart="turnCart")
     Nuxt
-    Banner
     Footer
 </template>
 

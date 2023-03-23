@@ -12,7 +12,7 @@
         .text Сейчас на ваших глазах происходит футбольная магия
         img.ball(src="~/assets/images/ball.svg")
     .final(v-if="step === 4") 
-        .case-19-20 
+        .case-22-season 
             .name {{ name }}
             .number {{ number }}
         .buttons
@@ -21,8 +21,6 @@
     .options(v-if="step === 'options'") 
         .description
         .option
-            .case-desc 
-                .text(v-html="caseDesc") {{ caseDesc }}
             h4 Выберите модель телефона
             select(v-model="model")
                 option(disabled value="") Выберите один из вариантов
@@ -41,10 +39,6 @@ export default{
         name: '',
         number: '',
         model: '',
-        caseDesc: `Материал чехла — высококачественный пластик. \n 
-Тип чехла — бампер, закрывает телефон со всех сторон, обеспечивая наилучшую защиту смартфона.  Удобный доступ ко всем вырезам и разъемам телефона. \n Толщина чехла — 1 мм. \n
-Метод нанесения изображения — ультрафиолетовая печать. Яркие и стойкие краски устойчивы к царапинам и выцветанию. Поверхность изображения матовая. \n 
-Номер и имя на чехле глянцевые и рельефные \n`
     }
     },
     head(){
@@ -55,26 +49,6 @@ export default{
           ]
     }
   },
-    computed: {
-        getItem() {
-            return this.$store.state.mobileCases.filter(item => item.id === +this.$route.params.id)[0]
-        },
-        getModels() {
-            return this.$store.state.models
-        },
-        product() {
-            return {
-            title: 'Season 19-20',
-            id: 123321,
-            model: this.model,
-            price: 1100,
-            quantity: 1,
-            image: require('~/assets/images/constructors/americano.jpg'),
-            shirtName: this.name,
-            shirtNumber: this.number
-            }
-        }
-        },  
     methods: {
     callMagic(){
         this.step = 3;
@@ -89,6 +63,26 @@ export default{
         this.addedMessage = false
         }, 1500)
     },
+    },
+    computed: {
+    getItem() {
+        return this.$store.state.mobileCases.filter(item => item.id === +this.$route.params.id)[0]
+    },
+    getModels() {
+        return this.$store.state.models
+    },
+    product() {
+        return {
+        title: 'Season 19-20',
+        id: 123321,
+        model: this.model,
+        price: 1100,
+        quantity: 1,
+        image: require('~/assets/images/constructors/22-season.jpg'),
+        shirtName: this.name,
+        shirtNumber: this.number
+        }
+    }
     },
 }  
 </script>
@@ -150,22 +144,23 @@ export default{
         font-weight: 500;
         }
         input{
-        border: none;
-        border-bottom: 4px solid #D9D9D9;
-        width: 100%;
-        height: 60px;
-        text-align: center;
-        font-weight: light;
-        letter-spacing: 1.5px;
-        font-size: 18px;
-        outline: none;
-        margin-bottom: 60px;
-        text-transform: uppercase;
+            border: none;
+            border-bottom: 4px solid #D9D9D9;
+            width: 100%;
+            height: 60px;
+            text-align: center;
+            font-weight: light;
+            letter-spacing: 1.5px;
+            font-size: 18px;
+            outline: none;
+            margin-bottom: 60px;
+            text-transform: uppercase;
         }
         .next{
         background: var(--blue);
         width: 100%;
         height: 60px;
+        font-display: column;
         color: #fff;
         font-size: 18px;
         display: flex;
@@ -209,10 +204,10 @@ export default{
     }
     .final{
         padding: 16px;
-        .case-19-20{
+        .case-22-season{
         width: 288px;
         height: 584px;
-        background-image: url(~/assets/images/constructors/americano-empty.jpg);
+        background-image: url(~/assets/images/constructors/22-empty.jpg);
         margin: 30px auto 30px;
         position: relative;
         background-size: cover;
@@ -221,24 +216,24 @@ export default{
             width: 100%;
             top: 180px;
             box-sizing: border-box;
-            color: #2a355b;
+            color: #fff;
             text-align: center;
             text-transform: uppercase;
             font-size: 43px;
-            font-family: '19-20';
+            font-family: '22';
             letter-spacing: 5px;
             margin: 0 auto;
         }
         .number{
             position: absolute;
             width: 100%;
-            top: 210px;
+            top: 235px;
             box-sizing: border-box;
-            color: #2a355b;
+            color: #fff;
             text-align: center;
             text-transform: uppercase;
             font-size: 220px;
-            font-family: '19-20';
+            font-family: '22';
             margin: 0 auto;
         }
         }
@@ -266,7 +261,7 @@ export default{
                 width: 300px;
                 margin: 0 auto 20px;
             }
-        }
+            }
     }
     .options{
         margin: 0 auto;
@@ -375,18 +370,6 @@ export default{
         margin-bottom: 24px;
     }
     }
-    .case-desc{
-            margin-bottom: 24px;
-                @media(min-width: 768px){
-                    width: 500px;
-                    margin: 0 auto 40px;
-                }
-            .text{
-                white-space: pre-line;
-                font-size: 14px;
-                color: rgb(87, 87, 87)
-            }
-        }
     .add-to-cart{
         width: 100%;
         background: #e5e5e5;
@@ -410,4 +393,5 @@ export default{
     color: #3468ac
     }
     }
+
 </styles>

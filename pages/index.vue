@@ -4,6 +4,7 @@
   Hits
   ProductsWrapper(:collection="collection")
   PayDelivery
+  Banner
 </template>
 
 

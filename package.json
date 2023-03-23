@@ -17,9 +17,10 @@
     "core-js": "^3.25.3",
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
-    "vue-server-renderer": "^2.7.10",
     "vue-dadata": "^2.0.0-beta.2",
-    "vue-template-compiler": "^2.7.10"
+    "vue-server-renderer": "^2.7.10",
+    "vue-template-compiler": "^2.7.10",
+    "yandex-metrika": "^0.1.2-beta"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.19.1",

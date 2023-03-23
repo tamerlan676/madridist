@@ -53,6 +53,7 @@
       padding: 16px;
       @media(min-width: 1200px){
         padding-top: 32px;
+        min-height: 800px;
         width: 1120px;
         margin: 0 auto 92px;
       }

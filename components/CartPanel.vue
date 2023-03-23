@@ -12,7 +12,7 @@
                   .info
                     .title {{ product.title }}
                     .model(v-if="product.model || product.color") {{ product.model }}, {{ product.color }}
-                    .model(v-if="product.shirtName" ) {{ product.shirtName }}, {{ product.shirtNumber }}
+                    .model(v-if="product.shirtName" style="text-transform: uppercase" ) {{ product.shirtName }}, {{ product.shirtNumber }}
                     .calc-price {{ product.price }} ₽
         .total-price
             .total Итоговая цена: 
