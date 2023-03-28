@@ -3,6 +3,7 @@
   Hero
   Hits
   ProductsWrapper(:collection="collection")
+  BannerCustom
   PayDelivery
   Banner
 </template>

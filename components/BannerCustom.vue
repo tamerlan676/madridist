@@ -2,11 +2,11 @@
 .banner
     .banner-wrapper
         .left
-            h3 Есть вопросы?
-            p Свяжитесь с нами и мы поможем вам, как Лука Модрич и Тони Кросс помогают своими партнерам по команде
-            button связаться 
+            h3 Ничего не нравится?
+            p Мы можем изготовить чехол по твоему персональному дизайну. Давай обсудим это
+            a(href="https://wa.me/79188208097" target="_blank") Обсудить 
         .right
-            img(src="~/assets/images/lukakross.jpg")
+            img(src="~/assets/images/descust.jpg")
 </template>
 
 <script>
@@ -52,21 +52,23 @@ export default {
             }
             p{
                 margin-bottom: 24px;
+                line-height: 24px;
             }
-            button{
+            a{
                 background: #fff;
                 color: var(--blue);
                 padding: 15px 20px;
                 text-transform: uppercase;
                 width: 100%;
                 font-weight: 500;
+                text-align: center;
                 @media(min-width: 992px){
                     width: 200px;
                 }
             }
         }
         .right{
-            display: none;
+            
             @media(min-width: 992px){
                 display: block;
             }

@@ -33,20 +33,20 @@ export default {
             model: '',
             iconsInfo: [
               {
-                img: require("~/assets/images/quality.svg"),
+                img: require("~/assets/images/watch-i.svg"),
                 text: `<span>Изготовление</span>: Срок изготовления чехла чаще всего занимает 2 дня.`
               },
               {
-                img: require("~/assets/images/quality.svg"),
+                img: require("~/assets/images/del-i.svg"),
                 text: `<span>Доставка</span>: Доставим почтой России или любой другой ТК за 2-4 дня.`
               },
               {
-                img: require("~/assets/images/quality.svg"),
+                img: require("~/assets/images/material-i.svg"),
                 text: `<span>Материалы</span>: Чехол изготовлен из высококачественного пластика`
               },
               {
-                img: require("~/assets/images/quality.svg"),
-                text: `<span>Печать</span>: Используется рельефная и объемная печать с высокой цветопередачей`
+                img: require("~/assets/images/print-i.svg"),
+                text: `<span>Печать</span>: Используется рельефная и лаковая печать с высокой цветопередачей`
               },
           ],
         }
@@ -199,6 +199,9 @@ export default {
                 font-size: 14px;
                 @media(min-width: 992px){
                   width: 400px;
+                }
+                span{
+                  font-weight: bold;
                 }
                 img{
                   margin-right: 20px;

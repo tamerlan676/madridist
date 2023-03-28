@@ -9,6 +9,10 @@
     CartPanel(:class="{active: cartActive}" @turnCart="turnCart")
     Nuxt
     Footer
+    .floating-call-btn 
+      a(href="https://wa.me/79188208097")
+        .pulse
+          img(src="~/assets/images/fl-wts.svg")
 </template>
 
  <script>
@@ -19,6 +23,18 @@
               {
                 title: 'Главная',
                 link: '/',
+              },
+              {
+                title: 'О Компании',
+                link: '/about',
+              },
+              {
+                title: 'Доставка и оплата',
+                link: '/delivery',
+              },
+              {
+                title: 'Контакты',
+                link: '/contacts',
               }
             ],
             activeBurger: false,
@@ -117,5 +133,28 @@
       }
     }
   }
+  .floating-call-btn{
+          position: fixed;
+          bottom: 10%;
+          right: 20px;
+          .pulse {
+            width: 55px;
+            height: 55px;
+            border-radius: 50px;
+            background: #fbb32f;
+            animation: pulse 1500ms infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 0 0 0 #0f8411;
+          }
+          100% {
+            box-shadow: 0 0 0 17px #fbb32f01;
+          }
+        }
+        }
 }
 </style>
