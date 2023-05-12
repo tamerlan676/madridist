@@ -19,6 +19,7 @@
     "nuxt": "^2.15.8",
     "vue": "^2.7.10",
     "vue-dadata": "^2.0.0-beta.2",
+    "vue-gallery-slideshow": "^1.5.2",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10",
     "yandex-metrika": "^0.1.2-beta"

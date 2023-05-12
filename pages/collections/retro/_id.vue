@@ -21,6 +21,7 @@
               .info-item(v-for="item in iconsInfo") 
                 img(:src="item.img")
                 .text(v-html="item.text") {{ item.text }}
+    Reviews
     Banner
 
 </template>

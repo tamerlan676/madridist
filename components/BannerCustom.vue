@@ -17,7 +17,11 @@ export default {
 
 <style lang="scss" scoped>
 .banner{
+    padding-top: 80px;
     margin-bottom: 60px;
+    @media(min-width: 992px){
+        padding-top: 120px;
+    }
     .banner-wrapper{
         background: var(--blue);
         @media(min-width: 992px){

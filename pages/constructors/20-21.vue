@@ -73,7 +73,7 @@ export default{
     },
     product() {
         return {
-        title: 'Season 19-20',
+        title: 'Season 20-21',
         id: 123321,
         model: this.model,
         price: 1100,

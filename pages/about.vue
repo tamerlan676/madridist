@@ -1,6 +1,7 @@
 <template lang="pug">
 .static-page 
     h1 О Компании
+    img(src="~/assets/images/about.jpg")
     p(v-html="text") {{  text  }}
 </template>
 
@@ -35,6 +36,10 @@ export default {
         padding: 32px 0;
     }
     h1{
+        margin-bottom: 24px;
+    }
+    img{
+        max-width: 100%;
         margin-bottom: 24px;
     }
 

@@ -8,8 +8,8 @@
                 img(:src="item.image") 
             .hit-info 
                 h3 {{ item.title }}
-                .old-price 1800 ₽
-                .price 1100 ₽
+                .old-price 2300 ₽
+                .price 1500 ₽
     
 </template>
 

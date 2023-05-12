@@ -172,6 +172,7 @@
             <h2>Правильных ответов {{ correctAnswers }} из {{ questions.length }}</h2>
             <p  class="gift-text">Спасибо что прошел наш тест! <br> Мы дарим тебе промокод на скидку 20%</p>
             <div class="promocode">HALA20</div>
+            <button class="start" @click="reload">к покупкам</button>
           </div>
     </div>
   </template>
@@ -187,7 +188,7 @@
         correctAnswers: 0,
         showClass: false,
         showBtn: false,
-        currentStep: 12,
+        currentStep: 1,
         questions: [
           {
             number: 1,
@@ -195,7 +196,7 @@
             variants: [
               {
                 variant: 'Слива',
-                descr: 'Да! Реал по другому называют Сливочные',
+                descr: 'Да! Реал по другому называют "Сливочные"',
                 isCorrect: true,
                 selected: false
               },
@@ -222,7 +223,7 @@
                   {
             number: 2,
             question: 'Кто изображен на этом фото?',
-            img: require('~/assets/images/hero.jpg'),
+            img: require('~/assets/images/alfredo.jpeg'),
             variants: [
               {
                 variant: 'Маноло Санчис',
@@ -275,7 +276,7 @@
               },
               {
                 variant: 'Карим Бензема',
-                descr: 'Ты в лицо знаешь только Бензему похоже',
+                descr: 'Не верно',
                 isCorrect: false,
                 selected: false
               },
@@ -380,7 +381,7 @@
             img: require('~/assets/images/hero.jpg'),
             variants: [
               {
-                variant: 'Жозе Мауриньо',
+                variant: 'Жозе Моуриньо',
                 descr: 'Верно! Жозе предпочитал Диего Лопеса Икеру',
                 isCorrect: true,
                 selected: false
@@ -392,7 +393,7 @@
                 selected: false
               },
               {
-                variant: 'Зидан',
+                variant: 'Зинедин Зидан',
                 descr: 'Не верно, соберись',
                 isCorrect: false,
                 selected: false
@@ -411,7 +412,7 @@
             img: require('~/assets/images/hero.jpg'),
             variants: [
               {
-                variant: 'Зидан',
+                variant: 'Зинедин Зидан',
                 descr: 'Верно! Зизу - легенда как игрок и как тренер',
                 isCorrect: true,
                 selected: false
@@ -454,14 +455,14 @@
                 selected: false
               },
               {
-                variant: 'Макро Асенсио',
+                variant: 'Марко Асенсио',
                 descr: 'Верно! Марко играл в Мальорке, которую тренировал Карпин',
                 isCorrect: true,
                 selected: false
               },
               {
                 variant: 'Андрей Лунин',
-                descr: 'Не вено',
+                descr: 'Не верно',
                 isCorrect: false,
                 selected: false
               },
@@ -502,6 +503,9 @@
       }
     },
     methods: {
+        reload(){
+            location.href="/"
+        },
       nextStep(){
         const inputs = document.querySelectorAll('.radio');
         inputs.forEach(input => {
@@ -538,15 +542,15 @@
   }
   </script>
   
-  <style>
+  <style scoped>
   .main{
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(-45deg, #ee7752, #972938, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #2a0978, #254bc9, #23a6d5, #1083aa);
     /* animation-name: 'color-change'; */
     animation-duration: 10s;
     animation-iteration-count: infinite;
@@ -567,6 +571,7 @@
     font-weight: bold;
     font-size: 24px;
     letter-spacing: 3px;
+    margin-bottom: 24px;
   }
   .quiz-block h2{
     margin-bottom: 16px;
