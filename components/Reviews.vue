@@ -10,16 +10,11 @@ section.reviews
             .main
                 img.circle(:src="review.img" @click="index = i")
                 .text {{ review.text }}
-        VueGallerySlideshow(ref="gallery" :images="images" :index="index" @close="index = null")
 </template>
     
     <script>
-    import VueGallerySlideshow from 'vue-gallery-slideshow'
     export default {
         name: 'ReviewsComp',
-        components: {
-            VueGallerySlideshow,
-        },
       data() {
         return {
           reviews: [

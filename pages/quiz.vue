@@ -2,8 +2,8 @@
     <div class="main">
         <div v-if="currentStep === 1" class="quiz-block step-1">
           <div class="count-of-question">10 вопросов</div>
-          <h1 class="main-question">Как хорошо вы знаете историю своего клуба?</h1>
-          <p class="q-desc">Сейчас мы узнаем насколько вы преданный болельщик</p>
+          <h1 class="main-question">Проверь как хорошо ты знаешь Джуда Беллингема?</h1>
+          <p class="q-desc">Сейчас мы узнаем насколько ты преданный фанат</p>
           <button @click="nextStep()" class="start">Начать Тест</button>
         </div>
           <div  class="quiz-block" v-if="currentStep === 2">
@@ -170,9 +170,9 @@
           </div>
           <div  class="quiz-block" v-if="currentStep === 12">
             <h2>Правильных ответов {{ correctAnswers }} из {{ questions.length }}</h2>
-            <p  class="gift-text">Спасибо что прошел наш тест! <br> Мы дарим тебе промокод на скидку 20%</p>
-            <div class="promocode">HALA20</div>
-            <button class="start" @click="reload">к покупкам</button>
+            <p  class="gift-text">Спасибо что прошел наш тест! <br> Поделись результатом в группе</p>
+            <!-- <div class="promocode">HALA20</div> -->
+            <button class="start" @click="reload">ПОДЕЛИТЬСЯ</button>
           </div>
     </div>
   </template>
@@ -192,28 +192,28 @@
         questions: [
           {
             number: 1,
-            question: 'Начнем с простого. Какой фрукт упоминают вспоминая о Мадридском Реале?',
+            question: 'Начнем с простого. Под каким номер Джуд выступает за мадридский Реал?',
             variants: [
               {
-                variant: 'Слива',
-                descr: 'Да! Реал по другому называют "Сливочные"',
+                variant: '5',
+                descr: 'Да! Его уже все сравнивают с легендарным Зизу',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Банан',
+                variant: '7',
                 descr: 'Соберись! Нужно быть повнимательнее',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Виноград',
+                variant: '22',
                 descr: 'Соберись! Нужно быть повнимательнее',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Ананас',
+                variant: '17',
                 descr: 'Соберись! Нужно быть повнимательнее',
                 isCorrect: false,
                 selected: false
@@ -222,30 +222,29 @@
           },
                   {
             number: 2,
-            question: 'Кто изображен на этом фото?',
-            img: require('~/assets/images/alfredo.jpeg'),
+            question: 'Какой игрок является кумиром для Джуда?',
             variants: [
               {
-                variant: 'Маноло Санчис',
-                descr: 'Ты в лицо знаешь только Бензему похоже',
+                variant: 'Зидан',
+                descr: 'Не верно. Его с ним только сравнивают',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Фернандо Йерро',
-                descr: 'Ты в лицо знаешь только Бензему похоже',
+                variant: 'Месси',
+                descr: 'Ходил такой слух, но это не правда',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Альфредо Ди Стефано',
-                descr: 'Верно! Это именно Альфредо. Но и другие парни - легенды',
+                variant: 'Джеррард',
+                descr: 'Верно! Джуд восхищался им все детство',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Икер Касильяс',
-                descr: 'Ты в лицо знаешь только Бензему похоже',
+                variant: 'Мбаппе',
+                descr: 'Не верно. Может наоборот, Джуд его кумир',
                 isCorrect: false,
                 selected: false
               },
@@ -253,30 +252,29 @@
           },
           {
             number: 3,
-            question: 'Чей гол спас Реал от поражения в финале ЛЧ в 2014 году в игре против Атлетико',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'Как добирался Джуд на тренировки первое время, когда только перешел в Реал?',
             variants: [
               {
-                variant: 'Криштиано Роналдо',
-                descr: 'Он, конечно забивал, но спас не он',
+                variant: 'На метро',
+                descr: 'Нет уж, это слишком',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Серхио Рамос',
-                descr: 'Именно! Это был волшебный гол с углового',
+                variant: 'Возила мама',
+                descr: 'Именно! Это безумно мило',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Лука Модрич',
-                descr: 'Он не забил, но подал тот самый угловой',
+                variant: 'Пешком',
+                descr: 'Ты чего! Это долго',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Карим Бензема',
-                descr: 'Не верно',
+                variant: 'На вертолете',
+                descr: 'Не верно. Но может в будущем такое возможно',
                 isCorrect: false,
                 selected: false
               },
@@ -284,29 +282,28 @@
             },
             {
             number: 4,
-            question: 'Кто из русских игроков играл за Реал Мадрид с 2009 по 2013 год?',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'А ты знаешь как зовут родного брата Джуда?',
             variants: [
               {
-                variant: 'Андрей Аршавин',
-                descr: 'Мимо! Андрей играл за Лондонский Асренал',
+                variant: 'Стив',
+                descr: 'Мимо!',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Федор Смолов',
+                variant: 'Федор',
                 descr: 'Больше так не шути',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Денис Черышев',
-                descr: 'Верно! Денис обладатель кубка ЛЧ в составе Реала',
+                variant: 'Джоб',
+                descr: 'Верно! Родители особо не фантаизируют',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Александр Головин',
+                variant: 'Месроп',
                 descr: 'Нет, но интересно было бы на это посмотреть',
                 isCorrect: false,
                 selected: false
@@ -315,30 +312,29 @@
           },
           {
             number: 5,
-            question: 'Сколько голов наколотил Криштиано Роналдо за Реал Мадрид?',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'Какую сумму Реал официально заплатил за Джуда?',
             variants: [
               {
-                variant: '330',
+                variant: '50 млн евро',
                 descr: 'Холодно',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: '400',
+                variant: '200 млн евро',
                 descr: 'Холодно',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: '450',
-                descr: 'Верно! Уму не постижимо!',
+                variant: '130 млн евро',
+                descr: 'Верно!',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: '520',
-                descr: 'Мимо, Соберись!',
+                variant: 'Так он же бесплатно пришел',
+                descr: 'Хотелось бы конечно, но нет',
                 isCorrect: false,
                 selected: false
               },
@@ -346,30 +342,29 @@
           },
           {
             number: 6,
-            question: 'Кто из этих футболистов не играл за Мадридский Реал?',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'В каком футбольном клубе Джуд дебютировал в 16 лет?',
             variants: [
               {
-                variant: 'Самуэль Этоо',
-                descr: 'Этот парень играл за Реал',
+                variant: 'Сток сити',
+                descr: 'Не попал',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Хавьер Савиола',
-                descr: 'Этот парень играл за Реал',
+                variant: 'Манчестер Сити',
+                descr: 'Мимо',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Фабиньо',
-                descr: 'Этот парень играл за Реал',
+                variant: 'Болтон',
+                descr: 'Этот парень не играл за Болтон',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Фернандо Торрес',
-                descr: 'Да! Фернандо прославился за другой Мадридский клуб',
+                variant: 'Бирмингем',
+                descr: 'Да! Фанаты до сих пор обажают Джуда',
                 isCorrect: true,
                 selected: false
               },
@@ -377,30 +372,29 @@
           },
           {
             number: 7,
-            question: 'Какой тренер посадил на банку Икера Касильяса?',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'Какой тренер 3 часа уговаривал Джуда перейти в его клуб, а не в Реал Мадрид?',
             variants: [
               {
-                variant: 'Жозе Моуриньо',
-                descr: 'Верно! Жозе предпочитал Диего Лопеса Икеру',
+                variant: 'Пеп Гвардиола',
+                descr: 'Верно! Пеп очень хотел Джуда в Сити',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Фабио Капелло',
+                variant: 'Юрген Клопп',
                 descr: 'Не верно, соберись',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Зинедин Зидан',
-                descr: 'Не верно, соберись',
+                variant: 'Сергей Семак',
+                descr: 'Этому бы и 3 лет не хватило на это',
                 isCorrect: false,
                 selected: false
               },
               {
                 variant: 'Карло Анчелотти',
-                descr: 'Не верно, соберись',
+                descr: 'Даже уговаривать не пришлось',
                 isCorrect: false,
                 selected: false
               },
@@ -408,30 +402,29 @@
           },
           {
             number: 8,
-            question: 'Какой тренер выиграл с Реалом 3 лиги чемпионов подряд?',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'В каком году Джуд сыграл свой дебютный матч в Лиге Чемпионов?',
             variants: [
               {
-                variant: 'Зинедин Зидан',
-                descr: 'Верно! Зизу - легенда как игрок и как тренер',
+                variant: '2020',
+                descr: 'Верно! Ему на тот момент было 17 лет и 117 дней',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Томас Тухель',
-                descr: 'Его даже не было в Реале',
+                variant: '2021',
+                descr: 'Не верно',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Гус Хиддинг',
+                variant: '2022',
                 descr: 'Не верно, соберись',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Карло Анчелотти',
-                descr: 'Карло пока еще этого не добился',
+                variant: '2023',
+                descr: 'К этому времени он уже даже забил несколько голов',
                 isCorrect: false,
                 selected: false
               },
@@ -439,29 +432,28 @@
           },
           {
             number: 9,
-            question: 'Кого из этих игроков Реала тренировал Валерий Карпин',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'Какому клубу Джуд забил свой первый гол в Лиге Чемпионов?',
             variants: [
               {
-                variant: 'Дениса Черышева',
+                variant: 'Байер',
                 descr: 'Не верно',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Иско',
+                variant: 'Реал Сосьедад',
                 descr: 'Не верно',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Марко Асенсио',
-                descr: 'Верно! Марко играл в Мальорке, которую тренировал Карпин',
+                variant: 'Манчестер Сити',
+                descr: 'Верно! Гвардило уже тогда начал охоту на Джуда',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Андрей Лунин',
+                variant: 'ЦСКА',
                 descr: 'Не верно',
                 isCorrect: false,
                 selected: false
@@ -470,30 +462,29 @@
           },
           {
             number: 10,
-            question: 'Кто отдал голевую передачу в финале Лиги Чемпинов 2022 года ?',
-            img: require('~/assets/images/hero.jpg'),
+            question: 'Какому клубу Джуд забил свой первый гол в Ла Лиге ?',
             variants: [
               {
-                variant: 'Тони Кросс',
-                descr: 'Этот парень много отдает, но в тот раз был не он',
+                variant: 'Бетис',
+                descr: 'Не верно',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Лука Модрич',
-                descr: 'Этот парень много отдает, но в тот раз был не он',
+                variant: 'Атлетико',
+                descr: 'Им еще не забил',
                 isCorrect: false,
                 selected: false
               },
               {
-                variant: 'Феде Вальверде',
-                descr: 'Верно! Феде выдал тогда шикарный рывок с голевым пасом на Винисиуса',
+                variant: 'Атлетик',
+                descr: 'Верно! Усепшный дебют для Джуда привел Реал к победе',
                 isCorrect: true,
                 selected: false
               },
               {
-                variant: 'Эден Азар',
-                descr: 'Жаль, но это не он',
+                variant: 'Барселона',
+                descr: 'Ждем и этого, но пока нет',
                 isCorrect: false,
                 selected: false
               },
@@ -504,7 +495,7 @@
     },
     methods: {
         reload(){
-            location.href="/"
+            location.href="https://vk.com/madridistru"
         },
       nextStep(){
         const inputs = document.querySelectorAll('.radio');

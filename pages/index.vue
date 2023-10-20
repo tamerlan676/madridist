@@ -4,6 +4,7 @@
   Hits
   ProductsWrapper(:collection="collection")
   Reviews
+  Questions
   BannerCustom
   PayDelivery
   Banner
