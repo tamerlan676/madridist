@@ -26,7 +26,7 @@
     },
     head(){
         return {
-          title: `Чехлы Real Madrid ${this.item.acf.seo_title} `,
+          title: `Чехлы Real Madrid`,
           meta: [
               { hid: 'description', name: 'description', content: 'Выбирай уникальный дизайнерский чехол на свой телефон' },
           ]
