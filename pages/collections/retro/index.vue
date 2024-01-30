@@ -10,6 +10,8 @@
                 h3 {{ item.title.rendered }}
                 .old-price {{ item.acf.old_price }} ₽
                 .price {{ item.acf.price }} ₽
+
+        seoTitle
     
 </template>
 
@@ -24,7 +26,7 @@
     },
     head(){
         return {
-          title: 'Чехлы для фанатов Реал Мадрид',
+          title: `Чехлы Real Madrid ${this.item.acf.seo_title} `,
           meta: [
               { hid: 'description', name: 'description', content: 'Выбирай уникальный дизайнерский чехол на свой телефон' },
           ]
@@ -34,6 +36,9 @@
     computed: {
         collection() {
             return this.$store.state.collection;
+        },
+        seoTitle() {
+            return this.$store.state.collection.filter(item => item.id === +this.$route.params.id)[0]
         }
     }
 }

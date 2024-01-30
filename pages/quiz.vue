@@ -2,7 +2,7 @@
     <div class="main">
         <div v-if="currentStep === 1" class="quiz-block step-1">
           <div class="count-of-question">10 вопросов</div>
-          <h1 class="main-question">Проверь как хорошо ты знаешь Джуда Беллингема?</h1>
+          <h1 class="main-question">Проверь, как хорошо ты знаешь Джуда Беллингема?</h1>
           <p class="q-desc">Сейчас мы узнаем насколько ты преданный фанат</p>
           <button @click="nextStep()" class="start">Начать Тест</button>
         </div>

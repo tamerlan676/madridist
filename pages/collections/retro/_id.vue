@@ -6,7 +6,7 @@
         .image 
             img(:src="getItem.acf.image")
         .info 
-          h1 {{ getItem.title.rendered }}
+          h1 Чехол Реал Мадрид - {{ getItem.title.rendered }}
           .desc(v-html="getItem.acf.description") {{ getItem.acf.description }}
           .options 
             .option
@@ -22,6 +22,7 @@
                 img(:src="item.img")
                 .text(v-html="item.text") {{ item.text }}
     Reviews
+    PayDelivery
     Banner
 
 </template>
@@ -57,7 +58,7 @@ export default {
   },
   head(){
         return {
-          title: 'Чехол фаната Реал Мадрид',
+          title: `Чехол Реал Мадрид - ${this.getItem.acf.seo_title}`,
           meta: [
             { hid: 'description', name: 'description', content: 'Заказать чехол Реал Мадрид можно на нашем сайте madridits.ru' },
           ]

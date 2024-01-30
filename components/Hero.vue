@@ -1,8 +1,8 @@
 <template lang="pug">
 .hero
     .text 
-        h1 MADRIDIST
-        p Уникальные сувениры для реальных&nbsp;фанатов
+        h1 Лучший подарок фанату Реал Мадрид
+        p Уникальные чехлы для реальных&nbsp;фанатов
 </template>
 
 <script>
@@ -33,7 +33,6 @@ export default{
         text-align: center;
         box-sizing: border-box;
         h1{
-            letter-spacing: 10px;
             margin-bottom: 10px;
             @media(min-width: 992px){
                 font-size: 40px;

@@ -1,6 +1,6 @@
 <template lang="pug">
 .collections-list
-    h2 Наша коллекция
+    h2 Чехлы Real Madrid
     .collection-desc Память как и легенды - бессмертна!
     .collection-wrapper 
         nuxt-link.product(v-for="(item, id) in collection" :key="id" :to="`/collections/retro/${item.id}`") 
