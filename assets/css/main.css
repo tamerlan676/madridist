@@ -26,6 +26,13 @@
      url(~/assets/fonts/22-23.ttf) format("truetype");
   }
 
+
+  @font-face {
+    font-family: "24";
+    src: local("24"),
+     url(~/assets/fonts/24.ttf) format("truetype");
+  }
+
 body{
     color: var(--blue)
 }

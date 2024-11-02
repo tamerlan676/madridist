@@ -25,11 +25,6 @@ export default {
                     link: '/constructors/19-20'
                 },
                 {
-                    title: 'Season 19-20',
-                    image: require('~/assets/images/constructors/2020-21.jpg'),
-                    link: '/constructors/20-21'
-                },
-                {
                     title: 'Season 22',
                     image: require('~/assets/images/constructors/22-season.jpg'),
                     link: '/constructors/22-season'
@@ -38,7 +33,12 @@ export default {
                     title: 'Season 22-23',
                     image: require('~/assets/images/constructors/22-23.jpg'),
                     link: '/constructors/22-23'
-                }
+                },
+                {
+                    title: 'Season 24-25',
+                    image: require('~/assets/images/constructors/24.jpg'),
+                    link: '/constructors/24'
+                },
             ]
         }
     }
